@@ -1,0 +1,516 @@
+/* General Body & Container Styles */
+body {
+    font-family: 'Poppins', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Updated font */
+    margin: 0;
+    background: linear-gradient(to right bottom, #e0f2f7, #f7f9fc); /* Subtle body gradient */
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll due to animations */
+}
+
+.container {
+    max-width: 1000px; /* Slightly wider container */
+    margin: 30px auto; /* More vertical margin */
+    padding: 25px;
+    box-sizing: border-box;
+    flex-grow: 1;
+    animation: fadeInScale 0.8s ease-out; /* Main app fade in */
+}
+
+/* Header (for main app page) */
+.header {
+    background: linear-gradient(to right, #3498db, #2980b9); /* Blue gradient header */
+    color: white;
+    padding: 18px 40px; /* More padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    position: sticky; /* Sticky header */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners */
+}
+
+.app-title {
+    margin: 0;
+    font-size: 2em; /* Larger title */
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.user-info {
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.header-button {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent white */
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 18px;
+    border-radius: 25px; /* Pill shape */
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+}
+
+/* Section Styles */
+.section {
+    background-color: #ffffff;
+    padding: 30px; /* More padding */
+    margin-bottom: 30px; /* More margin */
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Softer, deeper shadow */
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transitions */
+    border: 1px solid #e0e0e0; /* Subtle border */
+}
+
+.section:hover {
+    transform: translateY(-5px); /* More pronounced lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+h2 {
+    color: #2c3e50; /* Dark blue-gray for section titles */
+    margin-top: 0;
+    margin-bottom: 25px; /* More margin */
+    font-size: 1.8em; /* Larger title */
+    font-weight: 600;
+    border-bottom: 2px solid #e9ecef; /* Lighter, cleaner separator */
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+}
+
+h2 .fas {
+    color: #3498db; /* Icon color */
+    font-size: 1.2em;
+    animation: rotateIcon 2s infinite linear; /* Subtle icon animation */
+}
+/* Pause animation on hover */
+.section:hover h2 .fas {
+    animation-play-state: paused;
+}
+
+
+/* Input Group Styles */
+.input-group {
+    display: flex;
+    gap: 15px; /* More space */
+    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"],
+select {
+    flex: 1;
+    min-width: 180px; /* Ensure inputs don't become too small */
+    padding: 14px 18px; /* More padding */
+    border: 1px solid #dcdfe6;
+    border-radius: 8px; /* More rounded */
+    font-size: 1.05em; /* Slightly larger font */
+    background-color: #fcfdfe; /* Very light background */
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); /* Softer inner shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="file"] {
+    padding: 10px 15px; /* Adjust padding for file input */
+    background-color: #eef1f5; /* Different background for file input */
+    cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.25); /* More prominent glow on focus */
+    background-color: #ffffff;
+    outline: none;
+}
+
+/* Buttons */
+.primary-button {
+    background: linear-gradient(to right, #3498db, #2980b9); /* Blue gradient */
+    color: white;
+    border: none;
+    padding: 14px 30px; /* More padding */
+    border-radius: 8px; /* More rounded */
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* More space for icon */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+.primary-button:hover:not(:disabled) {
+    background: linear-gradient(to right, #2980b9, #3498db); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* More lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.primary-button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.primary-button:disabled {
+    background-color: #cccccc;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Status Messages */
+.status-message {
+    margin-top: 18px; /* More margin */
+    padding: 15px; /* More padding */
+    border-radius: 8px; /* More rounded */
+    font-weight: 500; /* Slightly lighter weight */
+    font-size: 1em;
+    animation: slideInFromTop 0.6s ease-out; /* Smooth slide in */
+}
+
+.status-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.status-message.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Hash Displays */
+.hash-display-group {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hash-display {
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.85em; /* Slightly larger */
+    word-break: break-all;
+    background-color: #f0f4f8; /* Slightly darker light background */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #e9edf1;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* List Items */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #ffffff; /* White background for items */
+    margin-bottom: 12px; /* More margin */
+    padding: 18px 25px;
+    border-radius: 10px; /* More rounded */
+    border: 1px solid #e6eef5; /* Subtle border */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* More space */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: all 0.3s ease;
+    position: relative; /* For potential absolute elements or effects */
+}
+
+ul li:hover {
+    background-color: #f8f9fc; /* Very subtle highlight on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px); /* Slight lift */
+}
+
+ul li strong {
+    font-size: 1.15em;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+ul li span {
+    font-size: 0.95em;
+    color: #666;
+}
+
+ul li button {
+    margin-top: 15px;
+    align-self: flex-end;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    background: linear-gradient(to right, #2ecc71, #27ae60); /* Green gradient */
+    color: white;
+    border-radius: 20px; /* Pill shape */
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+ul li button:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71); /* Reverse gradient */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Authentication Page Specific Styles */
+.auth-body {
+    background: linear-gradient(135deg, #3498db 0%, #8e44ad 100%); /* Existing gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-container {
+    /* No perspective needed for simple display */
+}
+
+.auth-card {
+    background-color: #ffffff;
+    padding: 45px; /* More padding */
+    border-radius: 18px; /* More rounded */
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+    text-align: center;
+    width: 420px; /* Slightly wider card */
+    max-width: 90%; /* Ensure responsiveness */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden; 
+    height: auto; 
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transition for height/content changes */
+}
+
+.auth-title {
+    font-size: 2.5em; /* Larger title */
+    color: #2c3e50;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.auth-subtitle {
+    font-size: 1.2em; /* Larger subtitle */
+    color: #7f8c8d;
+    margin-bottom: 35px; /* More margin */
+    font-weight: 400;
+}
+
+.form-group {
+    margin-bottom: 25px; /* More space */
+    width: 100%;
+}
+
+.input-icon {
+    position: relative;
+    width: 100%;
+}
+
+.input-icon input {
+    width: calc(100% - 50px); /* Adjust width for icon and padding */
+    padding: 15px 20px 15px 50px; /* More padding, space for icon */
+    border: 1px solid #dcdfe6;
+    border-radius: 30px; /* Pill shape for inputs */
+    height: 50px; /* Taller inputs */
+    font-size: 1.05em;
+    background-color: #fcfdfe;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.input-icon input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 5px rgba(52, 152, 219, 0.3), inset 0 1px 4px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+}
+
+.input-icon i {
+    position: absolute;
+    left: 20px; /* Position icon */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #95a5a6;
+    font-size: 1.2em; /* Larger icon */
+    transition: color 0.3s ease;
+}
+.input-icon input:focus + i { /* Change icon color on focus */
+    color: #3498db;
+}
+
+
+.auth-button {
+    width: 100%;
+    padding: 16px; /* More padding */
+    background: linear-gradient(to right, #3498db, #2980b9); /* Blue gradient */
+    color: white;
+    border: none;
+    border-radius: 30px; /* Pill shape */
+    font-size: 1.2em; /* Larger font */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.auth-button:hover {
+    background: linear-gradient(to right, #2980b9, #3498db); /* Reverse gradient */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.auth-button.register-button {
+    background: linear-gradient(to right, #2ecc71, #27ae60); /* Green gradient */
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.2);
+}
+.auth-button.register-button:hover {
+    background: linear-gradient(to right, #27ae60, #2ecc71); /* Reverse gradient */
+    box-shadow: 0 10px 25px rgba(46, 204, 113, 0.3);
+}
+
+
+.auth-switch {
+    margin-top: 30px; /* More margin */
+    font-size: 1em;
+    color: #7f8c8d;
+}
+
+.auth-switch a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.auth-switch a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInFromTop {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 20px;
+    }
+    .app-title {
+        font-size: 1.6em;
+    }
+    .user-info {
+        font-size: 0.95em;
+        gap: 10px;
+    }
+    .container {
+        margin: 15px;
+        padding: 15px;
+    }
+    .section {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    .input-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .input-group input, .input-group select, .input-group button {
+        width: 100%;
+        min-width: unset;
+    }
+    .auth-card {
+        width: 95%;
+        padding: 30px;
+        height: auto; /* Allow height to adjust */
+    }
+    .auth-title {
+        font-size: 2em;
+    }
+    .auth-subtitle {
+        font-size: 1em;
+    }
+    .input-icon input {
+        padding: 12px 15px 12px 45px;
+    }
+    .input-icon i {
+        left: 15px;
+        font-size: 1em;
+    }
+    .auth-button {
+        padding: 14px;
+        font-size: 1em;
+    }
+}
+/* Logo Styles */
+.logo-container {
+    text-align: center; /* Căn giữa logo */
+    margin-bottom: 20px; /* Khoảng cách với các phần tử khác */
+}
+
+.logo {
+    width: 150px; /* Kích thước logo (ví dụ) */
+    height: auto;
+}

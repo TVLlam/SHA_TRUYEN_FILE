@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Secure File Share</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="auth-body">
+    <div class="auth-container">
+        <div class="auth-card">
+                  <div class="logo-container">
+                <img src="logo1.png" alt="Your Logo" class="logo">
+            </div>
+            <div id="loginFormFace" class="auth-form-face">
+                <h1 class="auth-title">Welcome</h1>
+                <p class="auth-subtitle">Sign in to your account</p>
+
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="loginUsername" placeholder="Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="loginPassword" placeholder="Password">
+                    </div>
+                </div>
+                <button id="loginButton" class="auth-button">Login</button>
+                <div id="authStatusLogin" class="status-message"></div>
+
+                <p class="auth-switch">Don't have an account? <a href="#" id="showRegisterForm">Register here</a></p>
+            </div>
+
+            <div id="registerFormFace" class="auth-form-face flipped-face">
+                <h2 class="auth-title">Register</h2>
+                <p class="auth-subtitle">Create a new account</p>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-user-plus"></i>
+                        <input type="text" id="regUsername" placeholder="New Username">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-icon">
+                        <i class="fas fa-key"></i>
+                        <input type="password" id="regPassword" placeholder="New Password">
+                    </div>
+                </div>
+                <button id="registerButton" class="auth-button register-button">Register</button>
+                <div id="authStatusRegister" class="status-message"></div>
+                <p class="auth-switch">Already have an account? <a href="#" id="showLoginForm">Login here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

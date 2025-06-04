@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure File Share App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="main-app-body">
+    <div class="header">
+        <h1 class="app-title">Secure File Share & Integrity Check</h1>
+        <div class="user-info">
+            Welcome, <span id="usernameDisplay"></span>!
+            <button id="logoutButton" class="header-button"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        </div>
+    </div>
+
+    <div class="container main-app-container">
+        <div class="section upload-section card">
+            <h2><i class="fas fa-cloud-upload-alt"></i> Upload File</h2>
+            <div class="input-group">
+                <input type="file" id="fileInput">
+                <button id="uploadButton" class="primary-button"><i class="fas fa-upload"></i> Upload</button>
+            </div>
+            <div id="uploadStatus" class="status-message"></div>
+        </div>
+
+        <div class="section my-files-section card">
+            <h2><i class="fas fa-folder"></i> My Uploaded Files</h2>
+            <ul id="myFilesList">
+                <li>No files uploaded yet.</li>
+            </ul>
+        </div>
+
+        <div class="section share-section card">
+            <h2><i class="fas fa-share-alt"></i> Share File</h2>
+            <div class="input-group">
+                <select id="shareFileSelect">
+                    <option value="">Select your file to share</option>
+                </select>
+                <select id="shareUserSelect">
+                    <option value="">Select user to share with</option>
+                </select>
+                <button id="shareButton" class="primary-button" disabled><i class="fas fa-paper-plane"></i> Share File</button>
+            </div>
+            <div id="shareStatus" class="status-message"></div>
+        </div>
+
+        <div class="section shared-files-section card">
+            <h2><i class="fas fa-inbox"></i> Files Shared With Me</h2>
+            <ul id="sharedFilesList">
+                <li>No files shared with you.</li>
+            </ul>
+        </div>
+        
+        <div class="section download-section card">
+            <h2><i class="fas fa-download"></i> Download & Integrity Check</h2>
+            <div class="input-group">
+                <select id="downloadFileSelect">
+                    <option value="">Select a file to download</option>
+                </select>
+                <button id="downloadButton" class="primary-button" disabled><i class="fas fa-download"></i> Download</button>
+            </div>
+            <div id="downloadStatus" class="status-message"></div>
+            <div class="hash-display-group">
+                <div id="downloadHash" class="hash-display"></div>
+                <div id="clientHash" class="hash-display"></div>
+            </div>
+            <div id="integrityStatus" class="status-message"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
