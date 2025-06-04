@@ -1,9 +1,5 @@
 # 🔐 Hệ thống chia sẻ file an toàn & Kiểm tra tính toàn vẹn (SHA-256)
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/your-username/your-repo-name/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/Naereen/StrapDown.js.svg?style=social)](https://github.com/your-username/your-repo-name/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/Naereen/StrapDown.js.svg?style=social)](https://github.com/your-username/your-repo-name/network/members)
-
 <p>Dự án này xây dựng một hệ thống web toàn diện, cho phép người dùng <strong>tải lên, chia sẻ và tải xuống file</strong> một cách an toàn, kèm theo tính năng <strong>kiểm tra tính toàn vẹn dữ liệu</strong> sử dụng thuật toán <strong>SHA-256</strong>. Hệ thống đảm bảo rằng file không bị thay đổi hoặc hỏng hóc trong suốt quá trình truyền tải và lưu trữ.</p>
 
 <h2>🎯 Mục tiêu chính</h2>
@@ -62,8 +58,7 @@
 
 <pre>
 # 1. Clone repository
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/TVLlam/SHA_TRUYEN_FILE.git
 
 # 2. Cài đặt các thư viện Python
 pip install -r requirements.txt
