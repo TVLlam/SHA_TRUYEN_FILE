@@ -1,8 +1,8 @@
 # 🔐 Hệ thống chia sẻ file an toàn & Kiểm tra tính toàn vẹn (SHA-256)
 
-<p>Dự án này xây dựng một hệ thống web toàn diện, cho phép người dùng <strong>tải lên, chia sẻ và tải xuống file</strong> một cách an toàn, kèm theo tính năng <strong>kiểm tra tính toàn vẹn dữ liệu</strong> sử dụng thuật toán <strong>SHA-256</strong>. Hệ thống đảm bảo rằng file không bị thay đổi hoặc hỏng hóc trong suốt quá trình truyền tải và lưu trữ.</p>
+<p>Dự án xây dựng một hệ thống web toàn diện, cho phép người dùng <strong>tải lên, chia sẻ và tải xuống file</strong> một cách an toàn, kèm theo tính năng <strong>kiểm tra tính toàn vẹn dữ liệu</strong> sử dụng thuật toán <strong>SHA-256</strong>. Hệ thống đảm bảo rằng file không bị thay đổi hoặc hỏng hóc trong suốt quá trình truyền tải và lưu trữ.</p>
 
-<h2>🎯 Mục tiêu chính</h2>
+<h2> Mục tiêu chính</h2>
 <ul>
   <li>Cung cấp một nền tảng an toàn để người dùng <strong>đăng ký, đăng nhập và quản lý phiên</strong> truy cập.</li>
   <li>Cho phép người dùng <strong>tải lên file</strong> và lưu trữ trên máy chủ.</li>
