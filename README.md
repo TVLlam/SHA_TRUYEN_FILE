@@ -89,10 +89,3 @@ http://localhost:5000/login_page
   </li>
 </ol>
 
-<h2>🤝 Đóng góp</h2>
-<p>Mọi đóng góp cho dự án đều được hoan nghênh! Bạn có thể:</p>
-<ul>
-  <li>Báo cáo lỗi (Issues).</li>
-  <li>Đề xuất các tính năng mới hoặc cải tiến.</li>
-  <li>Gửi các Pull Request để đóng góp mã nguồn.</li>
-</ul>
